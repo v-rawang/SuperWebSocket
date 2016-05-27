@@ -35,6 +35,11 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "TestWeb", "TestWeb\", "{153
 		SlnRelativePath = "TestWeb\"
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nginx-1.11.0", "nginx-1.11.0", "{26AA342B-325C-4767-872D-9B2900F9A3D1}"
+	ProjectSection(SolutionItems) = preProject
+		nginx-1.11.0\conf\nginx.conf = nginx-1.11.0\conf\nginx.conf
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
