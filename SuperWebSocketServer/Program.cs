@@ -12,6 +12,8 @@ namespace SuperWebSocketServer
     {
         static CacheManager cacheManager = new CacheManager("118.194.132.112", 6379, "begin@2015", 1);
 
+        static int ServerPortNumber = 2016;
+
         static void Main(string[] args)
         {
             //Console.WriteLine("Press any key to start the server!");
@@ -71,6 +73,7 @@ namespace SuperWebSocketServer
             }
             else
             {
+                ServerPortNumber = portNumber;
                 Console.WriteLine(String.Format("Ready to be listening on port {0}.",portNumber));
             }
 
@@ -115,7 +118,7 @@ namespace SuperWebSocketServer
             Console.WriteLine(value);
             Console.WriteLine(session.AppServer.SessionCount);
             //cacheManager.SetCache(session.AppServer.Name, session.AppServer.SessionCount.ToString());
-            cacheManager.SetCache(session.Host, session.AppServer.SessionCount.ToString());
+            cacheManager.SetCache(String.Format("{0}:{1}", session.Host, ServerPortNumber), session.AppServer.SessionCount.ToString());
         }
 
         //private static void Server_NewRequestReceived(WebSocketSession session, SuperWebSocket.Protocol.IWebSocketFragment requestInfo)
@@ -151,7 +154,7 @@ namespace SuperWebSocketServer
             if (session != null)
             {
                 //cacheManager.SetCache(session.AppServer.Name, session.AppServer.SessionCount.ToString());
-                cacheManager.SetCache(session.Host, session.AppServer.SessionCount.ToString());
+                cacheManager.SetCache(String.Format("{0}:{1}", session.Host, ServerPortNumber), session.AppServer.SessionCount.ToString());
                 Console.WriteLine(session.AppServer.SessionCount);
                 Console.WriteLine(session.SessionID);
                 Console.WriteLine(session.Origin);

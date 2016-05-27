@@ -21,3 +21,8 @@
 127.0.0.1 - - [27/May/2016:16:11:35 +0800] "GET /helloworld/2018/ HTTP/1.1" 101 140 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0"
 127.0.0.1 - - [27/May/2016:16:11:48 +0800] "GET /helloworld/2017/ HTTP/1.1" 101 164 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0"
 127.0.0.1 - - [27/May/2016:16:11:54 +0800] "GET /helloworld/2016/ HTTP/1.1" 101 170 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0"
+127.0.0.1 - - [27/May/2016:18:27:10 +0800] "GET /helloworld/2016/ HTTP/1.1" 101 116 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko"
+127.0.0.1 - - [27/May/2016:18:27:20 +0800] "GET /helloworld/2017/ HTTP/1.1" 101 116 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko"
+127.0.0.1 - - [27/May/2016:18:27:28 +0800] "GET /helloworld/2018/ HTTP/1.1" 101 116 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko"
+127.0.0.1 - - [27/May/2016:18:27:37 +0800] "GET /helloworld/2019/ HTTP/1.1" 101 116 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko"
+127.0.0.1 - - [27/May/2016:18:27:43 +0800] "GET /helloworld/2020/ HTTP/1.1" 101 116 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko"

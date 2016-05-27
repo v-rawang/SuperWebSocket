@@ -29,6 +29,10 @@
   <ItemGroup />
   <ItemGroup>
     <Compile Include="run.ps1" />
+    <Compile Include="start-ie-instances.ps1" />
+    <Compile Include="start-nginx.ps1" />
+    <Compile Include="start-ws-instances.ps1" />
+    <Compile Include="stop-nginx.ps1" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="Build" />

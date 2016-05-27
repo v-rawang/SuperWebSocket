@@ -2,20 +2,29 @@
 # run.ps1
 #
 
+$rootDir = Split-Path -parent $MyInvocation.MyCommand.Definition;
+
+if($rootDir.EndsWith("\") -eq $false)
+{
+   $rootDir = $rootDir + "\";
+}
+
+cd $rootDir;
+
 #Start 5 Socket Server instances each with a different port number:
-Start-Process -FilePath ..\SuperWebSocketServer\SuperWebSocketServer.exe -ArgumentList @(2020) -Wait -NoNewWindow;
+Start-Process -FilePath (Get-Item –Path "..\SuperWebSocketServer\bin\Debug\SuperWebSocketServer.exe").FullName -ArgumentList @(2020); #-Wait -NoNewWindow;
 
-Start-Process -FilePath ..\SuperWebSocketServer\SuperWebSocketServer.exe -ArgumentList @(2019) -Wait -NoNewWindow;
+Start-Process -FilePath (Get-Item –Path "..\SuperWebSocketServer\bin\Debug\SuperWebSocketServer.exe").FullName -ArgumentList @(2019); #-Wait -NoNewWindow;
 
-Start-Process -FilePath ..\SuperWebSocketServer\SuperWebSocketServer.exe -ArgumentList @(2018) -Wait -NoNewWindow;
+Start-Process -FilePath (Get-Item –Path "..\SuperWebSocketServer\bin\Debug\SuperWebSocketServer.exe").FullName -ArgumentList @(2018); #-Wait -NoNewWindow;
 
-Start-Process -FilePath ..\SuperWebSocketServer\SuperWebSocketServer.exe -ArgumentList @(2017) -Wait -NoNewWindow;
+Start-Process -FilePath (Get-Item –Path "..\SuperWebSocketServer\bin\Debug\SuperWebSocketServer.exe").FullName -ArgumentList @(2017); #-Wait -NoNewWindow;
 
-Start-Process -FilePath ..\SuperWebSocketServer\SuperWebSocketServer.exe -ArgumentList @(2016) -Wait -NoNewWindow;
+Start-Process -FilePath (Get-Item –Path "..\SuperWebSocketServer\bin\Debug\SuperWebSocketServer.exe").FullName -ArgumentList @(2016); #-Wait -NoNewWindow;
 
-#Start Ngnix:
+#Start Nginx:
 #cd ..\..\SuperWebSocket_GitHub\nginx-1.11.0
-Start-Process -FilePath  ..\nginx-1.11.0\Ngnix.exe -Wait -NoNewWindow;
+Start-Process -FilePath  (Get-Item –Path "..\nginx-1.11.0\Nginx.exe").FullName; #-Wait -NoNewWindow;
 
 #Open 5 IE tabs each with a different port number
 $url = (Get-Item –Path "..\TestWeb\websocket.html").FullName
