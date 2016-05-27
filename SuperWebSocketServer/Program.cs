@@ -14,25 +14,53 @@ namespace SuperWebSocketServer
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Press any key to start the server!");
+            //Console.WriteLine("Press any key to start the server!");
 
-            Console.ReadKey();
-            Console.WriteLine();
+            //Console.ReadKey();
+            //Console.WriteLine();
 
             SuperWebSocket.WebSocketServer server = new WebSocketServer();
 
             int portNumber = 2016;
 
-            Console.WriteLine("Please enter port number: (Press enter to accept default (2016))");
+            string portNumberString = "";
 
-            string portNumberString = Console.ReadLine();
-
-            if (String.IsNullOrEmpty(portNumberString) || !int.TryParse(portNumberString, out portNumber))
+            if ((args != null) && args.Length > 0)
             {
-                portNumber = 2016;
-
-                Console.WriteLine("Invalid port number detected! Default value (2016) is taken.");
+                portNumberString = args[0];
             }
+
+            while (String.IsNullOrEmpty(portNumberString) || !int.TryParse(portNumberString, out portNumber))
+            {
+                Console.WriteLine("Please enter port number: (Press enter to accept default (2016))");
+
+                portNumberString = Console.ReadLine();
+
+                if (String.IsNullOrEmpty(portNumberString))
+                {
+                    portNumberString = "2016";
+                    portNumber = 2016;
+
+                    Console.WriteLine("Default value (2016) is taken.");
+                }
+                else
+                {
+                    portNumberString = "";
+
+                    Console.WriteLine("Invalid port number detected!");
+                }
+            }
+
+            //Console.WriteLine("Please enter port number: (Press enter to accept default (2016))");
+
+            //portNumberString = Console.ReadLine();
+
+            //if (String.IsNullOrEmpty(portNumberString) || !int.TryParse(portNumberString, out portNumber))
+            //{
+            //    portNumber = 2016;
+
+            //    Console.WriteLine("Invalid port number detected! Default value (2016) is taken.");
+            //}
 
             //Setup the server
             if (!server.Setup(portNumber)) //Setup with listening port
