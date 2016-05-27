@@ -27,3 +27,9 @@ $ie.Navigate2(($url + "2018"),0x1000);
 $ie.Navigate2(($url + "2017"),0x1000);
 $ie.Navigate2(($url + "2016"),0x1000);
 $ie.Visible = $true;
+
+#List the processes relating to Nginx:
+#Get-Process -Name Ng*;
+
+#Stop all of the processes relating to Nginx (if any):
+#Stop-Process -Name Nginx;
